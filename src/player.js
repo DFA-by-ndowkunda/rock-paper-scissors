@@ -1,13 +1,7 @@
 class Player {
-	constructor(weapon, playerName) {
-		this.weapon = weapon;
-		this.playerName = playerName;
-	}
-	getName() {
-		return this.playerName;
-	}
-	getWeapon() {
-		return this.weapon;
+	constructor() {
+		this.weapon;
+		this.username;
 	}
 }
 module.exports = Player;

@@ -1,10 +1,11 @@
-const weapons = require("./weapons.js");
+const weaponChoices = require("./weaponChoices.js");
 
 class Computer {
-	constructor() {}
 	getWeapon() {
-		let random = Math.floor(Math.random() * Object.keys(weapons).length);
-		let computerChoice = Object.keys(weapons)[random];
+		let random = Math.floor(
+			Math.random() * Object.values(weaponChoices).length
+		);
+		let computerChoice = Object.values(weaponChoices)[random];
 		return computerChoice;
 	}
 }

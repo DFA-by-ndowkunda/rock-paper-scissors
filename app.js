@@ -14,6 +14,9 @@ app.use("/", RegisterController);
 const ChoicesController = require("./src/controllers/choices.js");
 app.use("/choices", ChoicesController);
 
+const GameController = require("./src/controllers/game.js");
+app.use("/game", GameController);
+
 app.listen(port, () => {
 	console.log(`Rock-paper-scissors app listening at http://localhost:${port}`);
 });

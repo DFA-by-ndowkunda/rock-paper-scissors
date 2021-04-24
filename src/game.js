@@ -1,49 +1,49 @@
-const weapons = require("./weapons.js");
+const weaponChoices = require("./weaponChoices.js");
 class Game {
 	constructor() {
-		this.players = [];
+		this.weapons = [];
 	}
-	addPlayer(player) {
-		this.players.push(player);
+	addWeapon(weapon) {
+		this.weapons.push(weapon);
 	}
 
 	isDraw() {
-		if (this.players[0].weapon === this.players[1].weapon) {
+		if (this.weapons[0] === this.weapons[1]) {
 			return true;
 		}
 	}
 	isRock() {
 		if (
-			this.players[0].weapon === weapons.rock &&
-			this.players[1].weapon === weapons.scissors
+			this.weapons[0] === weaponChoices.rock &&
+			this.weapons[1] === weaponChoices.scissors
 		) {
 			return true;
 		}
 	}
 	isPaper() {
 		if (
-			this.players[0].weapon === weapons.paper &&
-			this.players[1].weapon === weapons.rock
+			this.weapons[0] === weaponChoices.paper &&
+			this.weapons[1] === weaponChoices.rock
 		) {
 			return true;
 		}
 	}
 	isScissors() {
 		if (
-			this.players[0].weapon === weapons.scissors &&
-			this.players[1].weapon === weapons.paper
+			this.weapons[0] === weaponChoices.scissors &&
+			this.weapons[1] === weaponChoices.paper
 		) {
 			return true;
 		}
 	}
 	checkWeapons() {
 		if (this.isDraw()) {
-			return "draw";
+			return "DRAW";
 		}
 		if (this.isRock() || this.isPaper() || this.isScissors()) {
-			return "player wins";
+			return "YOU WIN :)";
 		} else {
-			return "player lose";
+			return "YOU LOSE :(";
 		}
 	}
 }

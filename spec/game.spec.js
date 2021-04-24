@@ -2,17 +2,16 @@ const Game = require("../src/game.js");
 
 class ComputerDoubles {
 	getWeapon() {
-		let random = Math.floor(Math.random() * Object.keys(weaponsDoubles).length);
-		return Object.keys(weaponsDoubles)[random];
+		let random = Math.floor(
+			Math.random() * Object.values(weaponsDoubles).length
+		);
+		return Object.values(weaponsDoubles)[random];
 	}
 }
 class PlayerDoubles {
-	constructor(weapon, playerName) {
-		this.weapon = weapon;
-		this.playerName = playerName;
-	}
-	getWeapon() {
-		return this.weapon;
+	constructor() {
+		this.weapon;
+		this.username;
 	}
 }
 const weaponsDoubles = {
@@ -21,63 +20,76 @@ const weaponsDoubles = {
 	choice3: "scissors",
 };
 
-describe("Computer unit tests", () => {
+describe("Game play unit tests", () => {
 	it("expecting player weapon choice to be added to game", () => {
-		let player = new PlayerDoubles("rock", "Marie");
+		let player = new PlayerDoubles();
+		let playerChoice = (player.weapon = "rock");
 		let game = new Game();
-		game.addPlayer(player);
-		let result = game.players[0].weapon;
+		game.addWeapon(playerChoice);
+		let result = game.weapons[0];
 		expect(result).toBe("rock");
 	});
 	it("choices to be evaluated when player picks rock", () => {
-		let player = new PlayerDoubles("rock", "Marie");
+		let player = new PlayerDoubles();
 		let computer = new ComputerDoubles();
+		let computerChoice = computer.getWeapon();
+		let playerChoice = (player.weapon = "rock");
 		let game = new Game();
-		game.addPlayer(player);
-		let computerWeapon = game.addPlayer(computer.getWeapon());
-		let result = game.checkWeapons();
-		if (computerWeapon === "rock") {
-			expect(result).toContain("draw");
+		game.addWeapon(playerChoice);
+		game.addWeapon(computerChoice);
+		if (computerChoice === "rock") {
+			let result1 = game.checkWeapons();
+			expect(result1).toBe("DRAW");
 		}
-		if (computerWeapon === "paper") {
-			expect(result).toContain("player wins");
+		if (computerChoice === "paper") {
+			let result2 = game.checkWeapons();
+			expect(result2).toBe("YOU LOSE :(");
 		}
-		if (computerWeapon === "scissors") {
-			expect(result).toContain("player lose");
+		if (computerChoice === "scissors") {
+			let result3 = game.checkWeapons();
+			expect(result3).toBe("YOU WIN :)");
 		}
 	});
 	it("choices to be evaluated when player picks paper", () => {
-		let player = new PlayerDoubles("paper", "Marie");
+		let player = new PlayerDoubles();
 		let computer = new ComputerDoubles();
+		let computerChoice = computer.getWeapon();
+		let playerChoice = (player.weapon = "paper");
 		let game = new Game();
-		game.addPlayer(player);
-		let computerWeapon = game.addPlayer(computer.getWeapon());
-		let result = game.checkWeapons();
-		if (computerWeapon === "rock") {
-			expect(result).toContain("player lose");
+		game.addWeapon(playerChoice);
+		game.addWeapon(computerChoice);
+		if (computerChoice === "paper") {
+			let result1 = game.checkWeapons();
+			expect(result1).toBe("DRAW");
 		}
-		if (computerWeapon === "paper") {
-			expect(result).toContain("draw");
+		if (computerChoice === "scissors") {
+			let result2 = game.checkWeapons();
+			expect(result2).toBe("YOU LOSE :(");
 		}
-		if (computerWeapon === "scissors") {
-			expect(result).toContain("player win");
+		if (computerChoice === "rock") {
+			let result3 = game.checkWeapons();
+			expect(result3).toBe("YOU WIN :)");
 		}
 	});
 	it("choices to be evaluated when player picks scissors", () => {
-		let player = new PlayerDoubles("scissors", "Marie");
+		let player = new PlayerDoubles();
 		let computer = new ComputerDoubles();
+		let computerChoice = computer.getWeapon();
+		let playerChoice = (player.weapon = "scissors");
 		let game = new Game();
-		game.addPlayer(player);
-		let computerWeapon = game.addPlayer(computer.getWeapon());
-		let result = game.checkWeapons();
-		if (computerWeapon === "rock") {
-			expect(result).toContain("player lose");
+		game.addWeapon(playerChoice);
+		game.addWeapon(computerChoice);
+		if (computerChoice === "scissors") {
+			let result1 = game.checkWeapons();
+			expect(result1).toBe("DRAW");
 		}
-		if (computerWeapon === "paper") {
-			expect(result).toContain("player win");
+		if (computerChoice === "rock") {
+			let result2 = game.checkWeapons();
+			expect(result2).toBe("YOU LOSE :(");
 		}
-		if (computerWeapon === "scissors") {
-			expect(result).toContain("draw");
+		if (computerChoice === "paper") {
+			let result3 = game.checkWeapons();
+			expect(result3).toBe("YOU WIN :)");
 		}
 	});
 });

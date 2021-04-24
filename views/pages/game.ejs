@@ -4,7 +4,36 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="styles/game.css" />
+		<link
+			href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" type="text/css" href="styles/game.css" />
 		<title>Document</title>
 	</head>
-	<body></body>
+	<body>
+		<div id="game-container">
+			<div id="game-header">
+				<div id="player">
+					<h1><%= username %> you chose: <%= playerWeapon %></h1>
+				</div>
+				<div id="computer">
+					<h1>Computer chose: <%= computerWeapon %></h1>
+				</div>
+				<div id="result">
+					<h3><%= result %></h3>
+				</div>
+				<footer>
+					<a href="/choices">Play Again <%= username %>? </a>
+					<br />
+					<a href="/register">Not <%= username %> ? register here to play </a>
+				</footer>
+			</div>
+		</div>
+	</body>
 </html>

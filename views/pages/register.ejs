@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="styles/register.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="register-container">
+			<div id="name-header">
+				<h1>Please enter your name</h1>
+			</div>
+			<div id="name-form">
+				<form action="/choices" method="post">
+					<input
+						id="name-textbox"
+						type="text"
+						placeholder="name..."
+						name="playerName"
+						required
+					/>
+					<input id="name-submit" type="submit" value="Go!" />
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

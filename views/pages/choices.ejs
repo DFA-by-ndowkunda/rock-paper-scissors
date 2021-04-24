@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="styles/choices.css" />
+		<link
+			href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+			rel="stylesheet"
+		/>
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="choices-container">
+			<div id="choices-header">
+				<h1><%= playerName %></h1>
+				<h2>Pick your weapon!</h2>
+			</div>
+			<form action="/game" method="post">
+				<div id="choices-form">
+					<div id="rock">
+						<input
+							id="rock-button"
+							type="submit"
+							value="&#9994;"
+							class="stylish"
+						/>
+						<h4>ROCK</h4>
+					</div>
+					<div id="paper">
+						<input
+							id="paper-button"
+							type="submit"
+							value="&#9995;"
+							class="stylish"
+						/>
+						<h4>PAPER</h4>
+					</div>
+					<div id="scissors">
+						<input
+							id="scissors-button"
+							type="submit"
+							value="&#9996;"
+							class="stylish"
+						/>
+						<h4>SCISSORS</h4>
+					</div>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

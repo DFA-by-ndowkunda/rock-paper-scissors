@@ -1,0 +1,27 @@
+body {
+	font-family: monospace;
+	background-color: #786f8f;
+	text-align: center;
+}
+h1 {
+	color: #523a8a;
+}
+h2 {
+	color: #3a3150;
+}
+#choices-form {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+.stylish {
+	font-family: georgia, FontAwesome;
+	background: transparent;
+	border: none;
+	font-size: 10em;
+	line-height: 250px;
+}
+.stylish:hover {
+	opacity: 70%;
+}

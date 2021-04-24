@@ -1,11 +1,24 @@
 {
   "name": "rock-paper-scissors-challenge",
   "version": "1.0.0",
-  "description": "",
+  "description": "Instructions\r -------",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine"
   },
   "author": "dearshrewdwit",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndowkunda/rock-papers-scissors-challenge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ndowkunda/rock-papers-scissors-challenge/issues"
+  },
+  "homepage": "https://github.com/ndowkunda/rock-papers-scissors-challenge#readme",
+  "devDependencies": {
+    "cypress": "^7.1.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
 }

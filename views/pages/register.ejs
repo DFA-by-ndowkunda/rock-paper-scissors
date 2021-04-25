@@ -13,26 +13,31 @@
 			integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
 			crossorigin="anonymous"
 		/>
+		<link rel="stylesheet" type="text/css" href="styles/background.css" />
 		<link rel="stylesheet" type="text/css" href="styles/register.css" />
 		<title>Rock Paper Scissors Game Registration</title>
 	</head>
 	<body>
-		<div class="container-md">
+		<div class="container-md mt-4"id="register-container" >
 			<div id="name-header">
 				<h1><span class="badge badge-light">Please enter your name</span></h1>
 			</div>
-			<div id="name-form">
 				<form action="/choices" method="post">
-					<input
-						id="name-textbox"
-						type="text"
-						placeholder="name..."
-						name="username"
-						required
-					/>
-					<input id="name-submit" type="submit" value="Go!" />
+					<div class="row">
+						<div class="col-auto mr-auto"">
+							<input
+								id="name-textbox"
+								type="text"
+								placeholder="name..."
+								name="username"
+								required
+							/>
+						</div>
+						<div class="col-auto">
+							<input id="name-submit" type="submit" value="Go!" />
+						</div>
+					</div>
 				</form>
-			</div>
 		</div>
 	</body>
 </html>

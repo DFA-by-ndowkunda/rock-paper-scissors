@@ -1,0 +1,11 @@
+body {
+	font-family: monospace;
+	overflow: hidden;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #6d6485;
+	background-image: url(../media/rock-paper-scissors-pattern-background.jpg);
+	background-blend-mode: overlay;
+	text-align: center;
+}

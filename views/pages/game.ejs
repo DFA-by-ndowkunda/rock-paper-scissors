@@ -25,11 +25,15 @@
 			<div class="card">
 				<div id="game-container">
 					<div class="row align-items-center">
-						<div class="col-md 6" id="player">
-							<h1><%= username %> chose: <%= playerWeapon %></h1>
+						<div class="col-md 6" id="player-choice">
+							<h1><%= username %></h1>
+							<h2>chose: </h2>
+							<h3 id="player" data-cy="player-choice"><%= playerWeapon %></h1>
 						</div>
-						<div class="col-md 6" id="computer">
-							<h1>computer chose: <%= computerWeapon %></h1>
+						<div class="col-md 6" >
+							<h1>computer</h1>
+							<h2>chose: </h2>
+							<h3 id="computer"  data-cy="computer-choice"><%= computerWeapon %></h3>
 						</div>
 					</div>
 					<div id="result">
@@ -47,7 +51,7 @@
 				<a href="/"
 					><h4>
 						<span class="badge badge-light"
-							>Not <%= username %> ? register here to play
+							>Not <%= username%> ? register here to play
 						</span>
 					</h4></a
 				>

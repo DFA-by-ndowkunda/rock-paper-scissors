@@ -13,26 +13,17 @@ class Game {
 		}
 	}
 	isRock() {
-		if (
-			this.weapons[0] === weaponChoices.rock &&
-			this.weapons[1] === weaponChoices.scissors
-		) {
+		if (this.weapons[0] === `✊` && this.weapons[1] === `✌`) {
 			return true;
 		}
 	}
 	isPaper() {
-		if (
-			this.weapons[0] === weaponChoices.paper &&
-			this.weapons[1] === weaponChoices.rock
-		) {
+		if (this.weapons[0] === `✋` && this.weapons[1] === `✊`) {
 			return true;
 		}
 	}
 	isScissors() {
-		if (
-			this.weapons[0] === weaponChoices.scissors &&
-			this.weapons[1] === weaponChoices.paper
-		) {
+		if (this.weapons[0] === `✌` && this.weapons[1] === `✋`) {
 			return true;
 		}
 	}

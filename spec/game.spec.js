@@ -15,81 +15,87 @@ class PlayerDoubles {
 	}
 }
 const weaponsDoubles = {
-	choice1: "rock",
-	choice2: "paper",
-	choice3: "scissors",
+	choice1: `✊`,
+	choice2: `✋`,
+	choice3: `✌`,
 };
+let playerDouble = new PlayerDoubles();
+let computerDouble = new ComputerDoubles();
+let game = new Game();
 
 describe("Game play unit tests", () => {
 	it("expecting player weapon choice to be added to game", () => {
-		let player = new PlayerDoubles();
-		let playerChoice = (player.weapon = "rock");
+		let playerChoice = (playerDouble.weapon = `✊`);
 		let game = new Game();
 		game.addWeapon(playerChoice);
 		let result = game.weapons[0];
-		expect(result).toBe("rock");
+		expect(result).toBe(`✊`);
 	});
-	it("choices to be evaluated when player picks rock", () => {
-		let player = new PlayerDoubles();
-		let computer = new ComputerDoubles();
-		let computerChoice = computer.getWeapon();
-		let playerChoice = (player.weapon = "rock");
-		let game = new Game();
+	it("expecting a draw outcome", () => {
+		spyOn(global.Math, "random").and.returnValue(0);
+		const computerChoice = computerDouble.getWeapon();
+		console.log(computerChoice);
+		let playerChoice = (playerDouble.weapon = `✊`);
 		game.addWeapon(playerChoice);
 		game.addWeapon(computerChoice);
-		if (computerChoice === "rock") {
-			let result1 = game.checkWeapons();
-			expect(result1).toBe("DRAW");
-		}
-		if (computerChoice === "paper") {
-			let result2 = game.checkWeapons();
-			expect(result2).toBe("YOU LOSE :(");
-		}
-		if (computerChoice === "scissors") {
-			let result3 = game.checkWeapons();
-			expect(result3).toBe("YOU WIN :)");
-		}
+		let result1 = game.checkWeapons();
+		expect(result1).toBe("DRAW");
 	});
-	it("choices to be evaluated when player picks paper", () => {
-		let player = new PlayerDoubles();
-		let computer = new ComputerDoubles();
-		let computerChoice = computer.getWeapon();
-		let playerChoice = (player.weapon = "paper");
-		let game = new Game();
+	//player picks paper as weapon choice
+	it("expecting a lose outcome", () => {
+		spyOn(global.Math, "random").and.returnValue(0.8);
+		const computerChoice = computerDouble.getWeapon();
+		let playerChoice = (playerDouble.weapon = `✋`);
 		game.addWeapon(playerChoice);
 		game.addWeapon(computerChoice);
-		if (computerChoice === "paper") {
-			let result1 = game.checkWeapons();
-			expect(result1).toBe("DRAW");
-		}
-		if (computerChoice === "scissors") {
-			let result2 = game.checkWeapons();
-			expect(result2).toBe("YOU LOSE :(");
-		}
-		if (computerChoice === "rock") {
-			let result3 = game.checkWeapons();
-			expect(result3).toBe("YOU WIN :)");
-		}
+		let result = game.checkWeapons();
+		expect(result).toBe("YOU LOSE :(");
 	});
-	it("choices to be evaluated when player picks scissors", () => {
-		let player = new PlayerDoubles();
-		let computer = new ComputerDoubles();
-		let computerChoice = computer.getWeapon();
-		let playerChoice = (player.weapon = "scissors");
-		let game = new Game();
+	it("expecting a win outcome ", () => {
+		spyOn(global.Math, "random").and.returnValue(0);
+		const computerChoice = computerDouble.getWeapon();
+		let playerChoice = (playerDouble.weapon = `✋`);
 		game.addWeapon(playerChoice);
 		game.addWeapon(computerChoice);
-		if (computerChoice === "scissors") {
-			let result1 = game.checkWeapons();
-			expect(result1).toBe("DRAW");
-		}
-		if (computerChoice === "rock") {
-			let result2 = game.checkWeapons();
-			expect(result2).toBe("YOU LOSE :(");
-		}
-		if (computerChoice === "paper") {
-			let result3 = game.checkWeapons();
-			expect(result3).toBe("YOU WIN :)");
-		}
+		let result = game.checkWeapons();
+		expect(result).toBe("YOU WIN :)");
+	});
+	//player picks rock as weapon choice
+	it("expecting a lose outcome", () => {
+		spyOn(global.Math, "random").and.returnValue(0.5);
+		const computerChoice = computerDouble.getWeapon();
+		let playerChoice = (playerDouble.weapon = `✊`);
+		game.addWeapon(playerChoice);
+		game.addWeapon(computerChoice);
+		let result = game.checkWeapons();
+		expect(result).toBe("YOU LOSE :(");
+	});
+	it("expecting a win outcome ", () => {
+		spyOn(global.Math, "random").and.returnValue(0.8);
+		const computerChoice = computerDouble.getWeapon();
+		let playerChoice = (playerDouble.weapon = `✊`);
+		game.addWeapon(playerChoice);
+		game.addWeapon(computerChoice);
+		let result = game.checkWeapons();
+		expect(result).toBe("YOU WIN :)");
+	});
+	//player picks scissors as a weapon choice
+	it("expecting a lose outcome", () => {
+		spyOn(global.Math, "random").and.returnValue(0);
+		const computerChoice = computerDouble.getWeapon();
+		let playerChoice = (playerDouble.weapon = `✌`);
+		game.addWeapon(playerChoice);
+		game.addWeapon(computerChoice);
+		let result = game.checkWeapons();
+		expect(result).toBe("YOU LOSE :(");
+	});
+	it("expecting a win outcome ", () => {
+		spyOn(global.Math, "random").and.returnValue(0.5);
+		const computerChoice = computerDouble.getWeapon();
+		let playerChoice = (playerDouble.weapon = `✌`);
+		game.addWeapon(playerChoice);
+		game.addWeapon(computerChoice);
+		let result = game.checkWeapons();
+		expect(result).toBe("YOU WIN :)");
 	});
 });

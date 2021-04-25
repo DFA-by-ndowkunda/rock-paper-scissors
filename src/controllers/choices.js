@@ -9,4 +9,11 @@ ChoicesController.post("/", (req, res) => {
 	});
 });
 
+ChoicesController.get("/", (req, res) => {
+	req.app.locals.player = require("../player");
+	res.render("pages/choices", {
+		username: req.app.locals.player.username,
+	});
+});
+
 module.exports = ChoicesController;

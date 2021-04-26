@@ -31,12 +31,12 @@ node app.js
 ## Problem Approach
 
 1. Mockups for user interactions
-   ![register view](public\media\pages-view-register.png)
-   ![choices view](public\media\pages-views-choices.png)
-   ![game view](public\media\pages-views-game.png)
+   ![register view](public/media/pages-view-register.png)
+   ![choices view](public/media/pages-views-choices.png)
+   ![game view](public/media/pages-views-game.png)
 
 2. process model for user interactions
-   ![process model](public\media\process_model.png)
+   ![process model](public/media/process_model.png)
 
 3. Domain model for JS classes
 
@@ -69,13 +69,13 @@ This project used cypress for its feature tests and jasmine for its unit tests
 ### User Interactions
 
 Demo of registering name to play
-![gif of registering name for game](public\media\register.gif)
+![gif of registering name for game](public/media/register.gif)
 Demo of current player picking a weapon  
-![gif of  rock paper scissors choices](public\media\choose.gif)
+![gif of  rock paper scissors choices](public/media/choose.gif)
 Demo of result of game vs computer
-![gif of  result vs computer](public\media\result.gif)
+![gif of  result vs computer](public/media/result.gif)
 Demo of playing again via redirect links
-![gif of  redirects](public\media\playAgain.gif)
+![gif of  redirects](public/media/playAgain.gif)
 
 ## Acknowledgements
 
